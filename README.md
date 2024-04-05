@@ -1,2 +1,2 @@
-# book-store-database-project
-Our book store database project.
+# car-dealer-database-project
+Our Car dealer database project.
