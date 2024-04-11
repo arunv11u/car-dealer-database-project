@@ -62,11 +62,29 @@ const transactionSchema = new mongoose.Schema({
 		required: true
 	},
 	dealer: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Dealer',
-        required: true
-    },
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Dealer',
+		required: true
+	},
 	buyerName: {
+		type: String,
+		required: true
+	},
+	buyerPhone: {
+		type: String,
+		required: true
+	},
+	buyerEmail: {
+		type: String,
+		required: true
+	},
+	buyerAddress: {
+		street: String,
+		city: String,
+		state: String,
+		zip: String
+	},
+	paymentMethod: {
 		type: String,
 		required: true
 	},
