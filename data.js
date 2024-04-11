@@ -1,4 +1,4 @@
-const { dbConnect } = require("./db-connect");
+const { dbConnect } = require("./src/utils");
 const { Car, Dealer, Transaction } = require("./schema");
 
 const cars = [
