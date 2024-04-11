@@ -1,13 +1,13 @@
 {
 	"tables": {
-		"950ee022-74a7-4a37-8ca6-37c93c3420df": {
+		"6dee1a6d-aa6a-44af-ae93-30a281840a6f": {
 			"collation": "",
 			"desc": "",
 			"indexes": [
 				{
 					"name": "_id_",
 					"cols": [],
-					"id": "afb82901-5ffb-43f0-9a3c-6f22be5cc992",
+					"id": "ef184f84-a926-45de-8a50-47350a7c521f",
 					"mongodb": {
 						"fields": "{\n  \"_id\": 1\n}",
 						"options": ""
@@ -15,7 +15,7 @@
 				}
 			],
 			"relations": [
-				"1618351e-14c9-47f2-8d68-02b8175a2b45"
+				"7da69090-dc7a-4d83-b5b4-e2c2f9085ede"
 			],
 			"visible": true,
 			"afterScript": "",
@@ -26,7 +26,7 @@
 					"data": "",
 					"datatype": "objectId",
 					"any": "",
-					"id": "0527eb26-801a-41c7-a387-87ffc8fb0eb9",
+					"id": "569a1519-cdde-4817-9256-20850ef14e39",
 					"list": false,
 					"name": "_id",
 					"nn": true,
@@ -43,7 +43,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "abc5b4e3-b3ce-4730-888b-fe774abae604",
+					"id": "5e03c756-43d6-4893-be3f-394a09d4b530",
 					"list": false,
 					"name": "make",
 					"nn": true,
@@ -60,7 +60,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "41d7ec16-f916-450b-832d-1ad0e1067fff",
+					"id": "a4f0e8c9-3b89-4a92-9ee5-a47d8c1fac49",
 					"list": false,
 					"name": "model",
 					"nn": true,
@@ -77,7 +77,7 @@
 					"data": "",
 					"datatype": "double",
 					"any": "",
-					"id": "7accc3c6-a92d-4803-bd8e-060b49d677c5",
+					"id": "fa6ac159-efff-4196-a91c-d15331298787",
 					"list": false,
 					"name": "year",
 					"nn": true,
@@ -94,7 +94,7 @@
 					"data": "",
 					"datatype": "double",
 					"any": "",
-					"id": "bec51c9f-8eca-49d5-a33a-48beb951720d",
+					"id": "9093e58b-351f-40bb-b8ce-7c35e1592cee",
 					"list": false,
 					"name": "price",
 					"nn": true,
@@ -111,7 +111,7 @@
 					"data": "",
 					"datatype": "double",
 					"any": "",
-					"id": "b5cd6320-bfd1-4b20-bfb0-51a058c52e64",
+					"id": "16ddb91c-6365-4efe-867d-30ee9603e464",
 					"list": false,
 					"name": "mileage",
 					"nn": true,
@@ -128,7 +128,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "1defd18a-2949-464f-b952-7aa114b09b33",
+					"id": "4b909830-9905-4feb-89f4-e99fe9e82d2b",
 					"list": false,
 					"name": "color",
 					"nn": true,
@@ -145,7 +145,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "8ff48853-468a-4f58-9579-c8b08e087563",
+					"id": "d4eaf11a-df1e-44ed-9f8a-23be8e47f4a8",
 					"list": false,
 					"name": "condition",
 					"nn": true,
@@ -162,7 +162,7 @@
 					"data": "",
 					"datatype": "double",
 					"any": "",
-					"id": "0dbca43f-0085-4035-8ae3-6b0ad2898105",
+					"id": "06d26755-26d1-4717-8f0a-2bb092062574",
 					"list": false,
 					"name": "__v",
 					"nn": true,
@@ -175,18 +175,18 @@
 				}
 			],
 			"embeddable": false,
-			"id": "950ee022-74a7-4a37-8ca6-37c93c3420df",
+			"id": "6dee1a6d-aa6a-44af-ae93-30a281840a6f",
 			"lines": [],
 			"name": "cars",
 			"keys": [
 				{
 					"cols": [
 						{
-							"colid": "0527eb26-801a-41c7-a387-87ffc8fb0eb9",
-							"id": "9046fb6f-c6b0-4306-a5bf-36f0191e66f6"
+							"colid": "569a1519-cdde-4817-9256-20850ef14e39",
+							"id": "40701bd4-2cc5-459a-abf2-25339d6174db"
 						}
 					],
-					"id": "bb2dda61-26a9-4324-bf9a-d0f940a58272",
+					"id": "5ae68869-332d-4b06-9b34-b406121a8ed4",
 					"isPk": true,
 					"name": "Primary key"
 				}
@@ -203,14 +203,14 @@
 			"validation": "",
 			"capped": false
 		},
-		"ec6d63c5-09b2-40ce-84d9-575e50d3c800": {
+		"c4bccb1e-337d-4594-82b9-977d89a2455b": {
 			"collation": "",
 			"desc": "",
 			"indexes": [
 				{
 					"name": "_id_",
 					"cols": [],
-					"id": "40009452-923c-4c78-82e7-5c3fe68b314c",
+					"id": "fb722361-a473-4aa3-8a4d-3416cbc85a70",
 					"mongodb": {
 						"fields": "{\n  \"_id\": 1\n}",
 						"options": ""
@@ -218,7 +218,7 @@
 				}
 			],
 			"relations": [
-				"2c4d918b-4429-4878-bce6-d6623e9bd794"
+				"f3041e40-1087-4f69-999c-8e7650ecfa91"
 			],
 			"visible": true,
 			"afterScript": "",
@@ -229,7 +229,7 @@
 					"data": "",
 					"datatype": "objectId",
 					"any": "",
-					"id": "22f84058-74c4-4df6-847e-faa3819649a8",
+					"id": "e8e6e1e9-230f-43ec-b139-0a2f09cc162d",
 					"list": false,
 					"name": "_id",
 					"nn": true,
@@ -246,7 +246,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "c63335ac-ed5a-4afa-9ec3-087bfc920596",
+					"id": "67249d18-0011-44b2-bda2-68b052f01047",
 					"list": false,
 					"name": "name",
 					"nn": true,
@@ -263,7 +263,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "c7bf3346-19b7-4a82-aa39-7559ce211d51",
+					"id": "f33fcb46-8fa9-44ed-97ea-d55f6d502e75",
 					"list": false,
 					"name": "location",
 					"nn": true,
@@ -280,7 +280,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "aa0b4d88-8a5b-491b-914f-0822f5f8879a",
+					"id": "0b5af229-c8c3-4e2b-8ab3-b0369f660d50",
 					"list": false,
 					"name": "phone",
 					"nn": true,
@@ -297,7 +297,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "d8321039-8d8e-41fd-804e-6e44c3fdd2df",
+					"id": "7a38d43a-05c3-441f-be36-4d6781deff27",
 					"list": false,
 					"name": "email",
 					"nn": true,
@@ -314,7 +314,7 @@
 					"data": "",
 					"datatype": "double",
 					"any": "",
-					"id": "f74e5ebe-38ec-4e70-8b78-8e5868cf37d1",
+					"id": "22b91069-5414-4e0d-9fa0-a6b8706ff771",
 					"list": false,
 					"name": "__v",
 					"nn": true,
@@ -327,18 +327,18 @@
 				}
 			],
 			"embeddable": false,
-			"id": "ec6d63c5-09b2-40ce-84d9-575e50d3c800",
+			"id": "c4bccb1e-337d-4594-82b9-977d89a2455b",
 			"lines": [],
 			"name": "dealers",
 			"keys": [
 				{
 					"cols": [
 						{
-							"colid": "22f84058-74c4-4df6-847e-faa3819649a8",
-							"id": "ea5b4ce3-86e0-4bce-81e4-3f32e7989636"
+							"colid": "e8e6e1e9-230f-43ec-b139-0a2f09cc162d",
+							"id": "110be1d9-bb81-4893-a14c-1d8dfb586563"
 						}
 					],
-					"id": "b49b7736-9984-42d6-93c5-005f7ada330f",
+					"id": "a33af17c-94e9-46a7-a6cf-18154acb67e9",
 					"isPk": true,
 					"name": "Primary key"
 				}
@@ -355,14 +355,14 @@
 			"validation": "",
 			"capped": false
 		},
-		"e6081052-2a62-41fe-ab9b-7afd308558d9": {
+		"04f02e1c-0124-49b8-9f48-66367198da37": {
 			"collation": "",
 			"desc": "",
 			"indexes": [
 				{
 					"name": "_id_",
 					"cols": [],
-					"id": "8d36afe9-6d2b-411a-a3b9-402a14e6a109",
+					"id": "31f6ab00-8856-4d8c-ba2d-f39ca3f29c5f",
 					"mongodb": {
 						"fields": "{\n  \"_id\": 1\n}",
 						"options": ""
@@ -370,8 +370,8 @@
 				}
 			],
 			"relations": [
-				"1618351e-14c9-47f2-8d68-02b8175a2b45",
-				"2c4d918b-4429-4878-bce6-d6623e9bd794"
+				"7da69090-dc7a-4d83-b5b4-e2c2f9085ede",
+				"f3041e40-1087-4f69-999c-8e7650ecfa91"
 			],
 			"visible": true,
 			"afterScript": "",
@@ -382,7 +382,7 @@
 					"data": "",
 					"datatype": "objectId",
 					"any": "",
-					"id": "02c5d99a-0e13-4228-a463-0bba70d4ed11",
+					"id": "12c0c4bd-1db9-4bc8-a99d-c3c228b7524f",
 					"list": false,
 					"name": "_id",
 					"nn": true,
@@ -399,7 +399,7 @@
 					"data": "",
 					"datatype": "objectId",
 					"any": "",
-					"id": "6c90a814-a6d3-40fa-91cd-71cc056c03c8",
+					"id": "c6a1922f-466c-4fb1-a04e-cd1d8a981e93",
 					"list": false,
 					"name": "car",
 					"nn": true,
@@ -417,7 +417,7 @@
 					"data": "",
 					"datatype": "objectId",
 					"any": "",
-					"id": "beab2069-e9ed-46a6-bba5-4f558c93683d",
+					"id": "dfae7e0f-9f08-4f91-8dae-f80a609fdc85",
 					"list": false,
 					"name": "dealer",
 					"nn": true,
@@ -435,7 +435,7 @@
 					"data": "",
 					"datatype": "string",
 					"any": "",
-					"id": "da941332-3033-4f21-9c15-eadad50ccbb4",
+					"id": "aa1676e5-82a5-41f8-9d54-32e83c19cbc4",
 					"list": false,
 					"name": "buyerName",
 					"nn": true,
@@ -450,9 +450,77 @@
 					"comment": "",
 					"pattern": false,
 					"data": "",
+					"datatype": "string",
+					"any": "",
+					"id": "031e4f1d-18d1-4216-ae7e-afc4d5c35481",
+					"list": false,
+					"name": "buyerPhone",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				},
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
+					"datatype": "string",
+					"any": "",
+					"id": "0caef0e9-cd2e-46ed-b7ce-9ee059522344",
+					"list": false,
+					"name": "buyerEmail",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				},
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
+					"datatype": "7dfe62f7-b486-48e3-9d62-138432c51afd",
+					"any": "",
+					"id": "6e268365-ed01-4463-a8c6-a0fc57c97e90",
+					"list": false,
+					"name": "buyerAddress",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				},
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
+					"datatype": "string",
+					"any": "",
+					"id": "51c00456-a130-4154-87f8-15f0eadab566",
+					"list": false,
+					"name": "paymentMethod",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				},
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
 					"datatype": "double",
 					"any": "",
-					"id": "f2927846-83a7-4028-bf5d-12b89d6161a6",
+					"id": "636827af-b2db-49e4-a6c7-179e60e86066",
 					"list": false,
 					"name": "salePrice",
 					"nn": true,
@@ -469,7 +537,7 @@
 					"data": "",
 					"datatype": "date",
 					"any": "",
-					"id": "6af2cb87-137c-433c-9ef5-61c44f173a44",
+					"id": "c02ac28a-5cb9-4bb6-8c48-2daa4f475154",
 					"list": false,
 					"name": "transactionDate",
 					"nn": true,
@@ -486,7 +554,7 @@
 					"data": "",
 					"datatype": "double",
 					"any": "",
-					"id": "3d3aa509-1380-4087-8a77-542de30e78f0",
+					"id": "80ca9b33-9b70-4875-8993-cc9353ebea96",
 					"list": false,
 					"name": "__v",
 					"nn": true,
@@ -499,18 +567,18 @@
 				}
 			],
 			"embeddable": false,
-			"id": "e6081052-2a62-41fe-ab9b-7afd308558d9",
+			"id": "04f02e1c-0124-49b8-9f48-66367198da37",
 			"lines": [],
 			"name": "transactions",
 			"keys": [
 				{
 					"cols": [
 						{
-							"colid": "02c5d99a-0e13-4228-a463-0bba70d4ed11",
-							"id": "82a91d4e-b2d8-4467-a34f-ccb4df259014"
+							"colid": "12c0c4bd-1db9-4bc8-a99d-c3c228b7524f",
+							"id": "3de7281c-06f9-447e-9bec-ded2d044dd4e"
 						}
 					],
-					"id": "331e8d1a-f30e-4a7f-9bc1-a53ce149c0aa",
+					"id": "233af10d-f70c-4117-9030-cacc6326c963",
 					"isPk": true,
 					"name": "Primary key"
 				}
@@ -526,10 +594,111 @@
 			"others": "",
 			"validation": "",
 			"capped": false
+		},
+		"7dfe62f7-b486-48e3-9d62-138432c51afd": {
+			"collation": "",
+			"desc": "",
+			"indexes": [],
+			"relations": [],
+			"validationAction": "na",
+			"validationLevel": "na",
+			"visible": false,
+			"keys": [
+				{
+					"cols": [],
+					"id": "d935c6c9-4a74-48be-bcf3-7475e3ff310e",
+					"isPk": true,
+					"name": "Primary key"
+				}
+			],
+			"afterScript": "",
+			"cols": [
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
+					"datatype": "string",
+					"any": "",
+					"id": "f6f5e131-dfc0-41fa-92dd-ea499cccec4a",
+					"list": false,
+					"name": "street",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				},
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
+					"datatype": "string",
+					"any": "",
+					"id": "ae304b6c-0e45-4335-9d7e-74564d6d8491",
+					"list": false,
+					"name": "city",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				},
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
+					"datatype": "string",
+					"any": "",
+					"id": "23189102-ce41-4d40-963e-9be71bc75e53",
+					"list": false,
+					"name": "state",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				},
+				{
+					"comment": "",
+					"pattern": false,
+					"data": "",
+					"datatype": "string",
+					"any": "",
+					"id": "d14692d3-93e2-4d6b-bf51-7383f57145e9",
+					"list": false,
+					"name": "zip",
+					"nn": true,
+					"param": "",
+					"pk": false,
+					"collation": "",
+					"enum": "",
+					"estimatedSize": "",
+					"validation": ""
+				}
+			],
+			"embeddable": true,
+			"id": "7dfe62f7-b486-48e3-9d62-138432c51afd",
+			"lines": [],
+			"name": "object",
+			"generate": true,
+			"generateCustomCode": true,
+			"estimatedSize": "",
+			"customCode": "",
+			"capped": false,
+			"others": "",
+			"size": "",
+			"max": "",
+			"validation": ""
 		}
 	},
 	"relations": {
-		"1618351e-14c9-47f2-8d68-02b8175a2b45": {
+		"7da69090-dc7a-4d83-b5b4-e2c2f9085ede": {
 			"c_mch": "false",
 			"c_mp": "false",
 			"desc": "",
@@ -539,18 +708,18 @@
 			"c_ch": "many",
 			"c_cp": "",
 			"c_cch": "",
-			"child": "e6081052-2a62-41fe-ab9b-7afd308558d9",
+			"child": "04f02e1c-0124-49b8-9f48-66367198da37",
 			"cols": [
 				{
-					"childcol": "6c90a814-a6d3-40fa-91cd-71cc056c03c8",
-					"id": "8512effc-c8e1-4cf0-9e6b-638dab2bcee4",
-					"parentcol": "0527eb26-801a-41c7-a387-87ffc8fb0eb9"
+					"childcol": "c6a1922f-466c-4fb1-a04e-cd1d8a981e93",
+					"id": "eaf09322-7e2c-46f5-9474-501879151b53",
+					"parentcol": "569a1519-cdde-4817-9256-20850ef14e39"
 				}
 			],
-			"id": "1618351e-14c9-47f2-8d68-02b8175a2b45",
+			"id": "7da69090-dc7a-4d83-b5b4-e2c2f9085ede",
 			"name": "cars-transactions.car",
-			"parent": "950ee022-74a7-4a37-8ca6-37c93c3420df",
-			"parent_key": "bb2dda61-26a9-4324-bf9a-d0f940a58272",
+			"parent": "6dee1a6d-aa6a-44af-ae93-30a281840a6f",
+			"parent_key": "5ae68869-332d-4b06-9b34-b406121a8ed4",
 			"ri_pd": "",
 			"ri_pu": "",
 			"generate": true,
@@ -558,7 +727,7 @@
 			"customCode": "",
 			"relationColor": "transparent"
 		},
-		"2c4d918b-4429-4878-bce6-d6623e9bd794": {
+		"f3041e40-1087-4f69-999c-8e7650ecfa91": {
 			"c_mch": "false",
 			"c_mp": "false",
 			"desc": "",
@@ -568,18 +737,18 @@
 			"c_ch": "many",
 			"c_cp": "",
 			"c_cch": "",
-			"child": "e6081052-2a62-41fe-ab9b-7afd308558d9",
+			"child": "04f02e1c-0124-49b8-9f48-66367198da37",
 			"cols": [
 				{
-					"childcol": "beab2069-e9ed-46a6-bba5-4f558c93683d",
-					"id": "68720ed0-b247-4b06-9c4d-a3ebc471a83c",
-					"parentcol": "22f84058-74c4-4df6-847e-faa3819649a8"
+					"childcol": "dfae7e0f-9f08-4f91-8dae-f80a609fdc85",
+					"id": "d3f54921-27f8-47c4-8365-e6ed4cbf2ccc",
+					"parentcol": "e8e6e1e9-230f-43ec-b139-0a2f09cc162d"
 				}
 			],
-			"id": "2c4d918b-4429-4878-bce6-d6623e9bd794",
+			"id": "f3041e40-1087-4f69-999c-8e7650ecfa91",
 			"name": "dealers-transactions.dealer",
-			"parent": "ec6d63c5-09b2-40ce-84d9-575e50d3c800",
-			"parent_key": "b49b7736-9984-42d6-93c5-005f7ada330f",
+			"parent": "c4bccb1e-337d-4594-82b9-977d89a2455b",
+			"parent_key": "a33af17c-94e9-46a7-a6cf-18154acb67e9",
 			"ri_pd": "",
 			"ri_pu": "",
 			"generate": true,
@@ -591,10 +760,10 @@
 	"notes": {},
 	"lines": {},
 	"model": {
-		"activeDiagram": "cce8b412-fbe4-4451-99e3-2bd325bbd2c1",
+		"activeDiagram": "41bd8b4f-764e-4f41-a767-3b7a9d6e56aa",
 		"desc": "",
 		"name": "Car Dealer App",
-		"id": "e57a7a5c-f74b-432b-94ff-1c49a800735b",
+		"id": "262950ed-7541-45ce-815f-7d4d175eeb0b",
 		"path": "",
 		"type": "MONGODB",
 		"version": 1,
@@ -629,45 +798,58 @@
 	},
 	"otherObjects": {},
 	"diagrams": {
-		"cce8b412-fbe4-4451-99e3-2bd325bbd2c1": {
-			"id": "cce8b412-fbe4-4451-99e3-2bd325bbd2c1",
+		"41bd8b4f-764e-4f41-a767-3b7a9d6e56aa": {
+			"id": "41bd8b4f-764e-4f41-a767-3b7a9d6e56aa",
 			"lineColor": "transparent",
 			"description": "",
 			"diagramItems": {
-				"950ee022-74a7-4a37-8ca6-37c93c3420df": {
-					"x": 748,
-					"y": 55,
+				"6dee1a6d-aa6a-44af-ae93-30a281840a6f": {
+					"x": 809,
+					"y": 49,
 					"gHeight": 189,
 					"gWidth": 199,
 					"background": "#03a9f4",
 					"color": "#ffffff",
-					"referencedItemId": "950ee022-74a7-4a37-8ca6-37c93c3420df",
+					"referencedItemId": "6dee1a6d-aa6a-44af-ae93-30a281840a6f",
 					"resized": false,
 					"autoExpand": true,
 					"backgroundOpacity": "10",
 					"collapsed": false
 				},
-				"ec6d63c5-09b2-40ce-84d9-575e50d3c800": {
-					"x": 515,
-					"y": 374,
+				"c4bccb1e-337d-4594-82b9-977d89a2455b": {
+					"x": 254,
+					"y": 480,
 					"gHeight": 135,
 					"gWidth": 191,
 					"background": "#03a9f4",
 					"color": "#ffffff",
-					"referencedItemId": "ec6d63c5-09b2-40ce-84d9-575e50d3c800",
+					"referencedItemId": "c4bccb1e-337d-4594-82b9-977d89a2455b",
 					"resized": false,
 					"autoExpand": true,
 					"backgroundOpacity": "10",
 					"collapsed": false
 				},
-				"e6081052-2a62-41fe-ab9b-7afd308558d9": {
-					"x": 135,
-					"y": 70,
-					"gHeight": 153,
-					"gWidth": 230,
+				"04f02e1c-0124-49b8-9f48-66367198da37": {
+					"x": 231,
+					"y": 50,
+					"gHeight": 297,
+					"gWidth": 240,
 					"background": "#03a9f4",
 					"color": "#ffffff",
-					"referencedItemId": "e6081052-2a62-41fe-ab9b-7afd308558d9",
+					"referencedItemId": "04f02e1c-0124-49b8-9f48-66367198da37",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"7dfe62f7-b486-48e3-9d62-138432c51afd": {
+					"x": -1,
+					"y": -1,
+					"gHeight": -1,
+					"gWidth": -1,
+					"background": "transparent",
+					"color": "transparent",
+					"referencedItemId": "7dfe62f7-b486-48e3-9d62-138432c51afd",
 					"resized": false,
 					"autoExpand": true,
 					"backgroundOpacity": "10",

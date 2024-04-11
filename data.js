@@ -93,41 +93,86 @@ const dealers = [
 ];
 
 const transactions = [
-	{
-		"car": "66139a1260640410d10e5744",
-		"dealer": "66139b0a20a045b83338f134",
-		"buyerName": "John Doe",
-		"salePrice": 21000,
-		"transactionDate": "2024-04-08T12:00:00Z"
-	},
-	{
-		"car": "66139a21398a4665fa9aa189",
-		"dealer": "66139b1571476f48b087da9f",
-		"buyerName": "Jane Smith",
-		"salePrice": 26000,
-		"transactionDate": "2024-04-07T12:00:00Z"
-	},
-	{
-		"car": "66139a34f9ad0d68f6215b91",
-		"dealer": "66139b25fe1e6cf3d6e53450",
-		"buyerName": "Alice Johnson",
-		"salePrice": 37000,
-		"transactionDate": "2024-04-06T12:00:00Z"
-	},
-	{
-		"car": "66139a42c9b4bf8d371f5f3a",
-		"dealer": "66139b35a381e8a716c1c3ef",
-		"buyerName": "Bob Williams",
-		"salePrice": 41000,
-		"transactionDate": "2024-04-05T12:00:00Z"
-	},
-	{
-		"car": "66139a50c3e246442dfbb11f",
-		"dealer": "66139b4254f6ab5fc3331273",
-		"buyerName": "Emily Brown",
-		"salePrice": 62000,
-		"transactionDate": "2024-04-04T12:00:00Z"
-	}
+    {
+        "car": "66139a1260640410d10e5744",
+        "dealer": "66139b0a20a045b83338f134",
+        "buyerName": "John Doe",
+        "buyerPhone": "123-456-7890",
+        "buyerEmail": "john@example.com",
+        "buyerAddress": {
+            "street": "123 Main St",
+            "city": "Anytown",
+            "state": "CA",
+            "zip": "12345"
+        },
+        "paymentMethod": "Credit Card",
+        "salePrice": 21000,
+        "transactionDate": "2024-04-08T12:00:00Z"
+    },
+    {
+        "car": "66139a21398a4665fa9aa189",
+        "dealer": "66139b1571476f48b087da9f",
+        "buyerName": "Jane Smith",
+        "buyerPhone": "987-654-3210",
+        "buyerEmail": "jane@example.com",
+        "buyerAddress": {
+            "street": "456 Oak St",
+            "city": "Sometown",
+            "state": "NY",
+            "zip": "54321"
+        },
+        "paymentMethod": "Cash",
+        "salePrice": 26000,
+        "transactionDate": "2024-04-07T12:00:00Z"
+    },
+    {
+        "car": "66139a34f9ad0d68f6215b91",
+        "dealer": "66139b25fe1e6cf3d6e53450",
+        "buyerName": "Alice Johnson",
+        "buyerPhone": "555-123-4567",
+        "buyerEmail": "alice@example.com",
+        "buyerAddress": {
+            "street": "789 Elm St",
+            "city": "Othertown",
+            "state": "TX",
+            "zip": "67890"
+        },
+        "paymentMethod": "Bank Transfer",
+        "salePrice": 37000,
+        "transactionDate": "2024-04-06T12:00:00Z"
+    },
+    {
+        "car": "66139a42c9b4bf8d371f5f3a",
+        "dealer": "66139b35a381e8a716c1c3ef",
+        "buyerName": "Bob Williams",
+        "buyerPhone": "111-222-3333",
+        "buyerEmail": "bob@example.com",
+        "buyerAddress": {
+            "street": "321 Pine St",
+            "city": "Anothertown",
+            "state": "FL",
+            "zip": "45678"
+        },
+        "paymentMethod": "Financing",
+        "salePrice": 41000,
+        "transactionDate": "2024-04-05T12:00:00Z"
+    },
+    {
+        "car": "66139a50c3e246442dfbb11f",
+        "dealer": "66139b4254f6ab5fc3331273",
+        "buyerName": "Emily Brown",
+        "buyerPhone": "333-444-5555",
+        "buyerEmail": "emily@example.com",
+        "buyerAddress": {
+            "street": "555 Maple St",
+            "city": "Yetanothertown",
+            "state": "WA",
+            "zip": "56789"
+        },
+        "paymentMethod": "Cashier's Check",
+        "salePrice": 62000,
+        "transactionDate": "2024-04-04T12:00:00Z"
+    }
 ];
 
 async function loadData() {
