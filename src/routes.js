@@ -1,7 +1,6 @@
 // Importing required modules
 const cors = require("cors");
 const express = require("express");
-const path = require("path");
 
 // Importing utility functions
 const {
@@ -13,8 +12,6 @@ const {
 function listen(app) {
 	// Disable x-powered-by header
 	app.disable("x-powered-by");
-	// Enable trust proxy for secure headers
-	app.enable("trust proxy");
 
 	// Enable CORS with options
 	app.use(cors(corsOptions));
@@ -23,9 +20,6 @@ function listen(app) {
 	app.use(express.json());
 	// Parse URL-encoded bodies
 	app.use(express.urlencoded({ extended: true }));
-
-	// Serve static files from the public directory
-	app.use(express.static(path.resolve(__dirname, "public")));
 
 	// Middleware to log requests
 	app.use((req, res, next) => {
@@ -41,10 +35,10 @@ function listen(app) {
 	});
 
 	// Importing controllers for different routes
-	
+	const carController = require("./cars/controllers/car.controller");
 
 	// Mounting routes
-	
+	app.use("/car", carController);
 
 	// Error handling middleware
 	app.use(requestErrorHandler);
