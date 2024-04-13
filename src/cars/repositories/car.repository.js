@@ -17,10 +17,19 @@ function CarRepository() {
 
 		softDelete: async function (carId) {
 			const deletedCar = await Car.findByIdAndUpdate(carId, { isDeleted: true }, { new: true });
-			if (!deletedCar) {
-				throw new Error("Car not found");
-			}
+
 			return formatCar(deletedCar);
+		},
+
+		findByMakeModelYear: async function (make, model, year) {
+			const car = await Car.findOne({ make, model, year, isDeleted: false });
+
+			return formatCar(car);
+		},
+
+		findAll: async function () {
+			const cars = await Car.find({ isDeleted: false });
+			return cars.map(formatCar);
 		}
 	};
 }
