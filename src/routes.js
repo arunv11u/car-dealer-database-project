@@ -1,6 +1,7 @@
 // Importing required modules
 const cors = require("cors");
 const express = require("express");
+const path = require("path");
 
 // Importing utility functions
 const {
@@ -21,6 +22,13 @@ function listen(app) {
 	// Parse URL-encoded bodies
 	app.use(express.urlencoded({ extended: true }));
 
+	// Serve static files from the public directory
+	app.use(express.static(path.resolve(__dirname, "public")));
+
+	// Set up views directory and view engine to use EJS
+	app.set("views", path.join(__dirname, "views"));
+	app.set("view engine", "ejs");
+
 	// Middleware to log requests
 	app.use((req, res, next) => {
 		if (req.method !== "OPTIONS")
@@ -36,9 +44,11 @@ function listen(app) {
 
 	// Importing controllers for different routes
 	const carController = require("./cars/controllers/car.controller");
+	const pageController = require("./views/controllers/page.controller");
 
 	// Mounting routes
 	app.use("/car", carController);
+	app.use("/", pageController);
 
 	// Error handling middleware
 	app.use(requestErrorHandler);
