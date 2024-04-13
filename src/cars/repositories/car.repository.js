@@ -7,6 +7,20 @@ function CarRepository() {
 			const car = await new Car(newCar).save();
 
 			return formatCar(car);
+		},
+
+		update: async function (carId, updateDTO) {
+			const updatedCar = await Car.findByIdAndUpdate(carId, updateDTO, { new: true });
+
+			return formatCar(updatedCar);
+		},
+
+		softDelete: async function (carId) {
+			const deletedCar = await Car.findByIdAndUpdate(carId, { isDeleted: true }, { new: true });
+			if (!deletedCar) {
+				throw new Error("Car not found");
+			}
+			return formatCar(deletedCar);
 		}
 	};
 }
