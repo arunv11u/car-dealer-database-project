@@ -6,6 +6,8 @@ const { validateCreateCarInputs } = require("../validators/create-car.validator"
 const { updateCarInteractor } = require("../interactors/update-car.interactor");
 const { softDeleteCarInteractor } = require("../interactors/delete-car.interactor");
 const { validateUpdateCarInputs } = require("../validators/update-car.validator");
+const { getCarInteractor } = require("../interactors/get-car.interactor");
+const { getAllCarsInteractor } = require("../interactors/get-all-cars.interactor");
 
 const router = express.Router();
 
@@ -66,4 +68,27 @@ router.delete("/:id", async (request, response, next) => {
 	}
 });
 
+router.get("/:make/:model/:year", async (request, response, next) => {
+	try {
+		const { make, model, year } = request.params;
+
+		const car = await getCarInteractor(make, model, parseInt(year));
+
+		response.status(200).send(car);
+	} catch (error) {
+		console.error("Error in getting car by make, model, and year:", error);
+		next(error);
+	}
+});
+
+router.get("/", async (request, response, next) => {
+	try {
+		const cars = await getAllCarsInteractor();
+
+		response.status(200).send(cars);
+	} catch (error) {
+		console.error("Error in getting all cars:", error);
+		response.status(500).send({ error: "Internal Server Error" });
+	}
+});
 module.exports = router;
