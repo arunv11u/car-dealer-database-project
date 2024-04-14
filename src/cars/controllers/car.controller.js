@@ -9,6 +9,7 @@ const { validateUpdateCarInputs } = require("../validators/update-car.validator"
 const { getCarInteractor } = require("../interactors/get-car.interactor");
 const { getAllCarsInteractor } = require("../interactors/get-all-cars.interactor");
 const { buyCarInteractor } = require("../interactors/buy-car.interactor");
+const { validateBuyCarInputs } = require("../validators/buy-car.validator");
 
 const router = express.Router();
 
@@ -34,7 +35,7 @@ router.post("/", [validateCreateCarInputs()], async (request, response, next) =>
 	}
 });
 
-router.post("/:carId/buy", async (request, response, next) => {
+router.post("/:carId/buy",[validateBuyCarInputs()], async (request, response, next) => {
     try {
         const carId = request.params.carId;
         const buyerInfo = {
