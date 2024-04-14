@@ -1,4 +1,4 @@
-const validateCarBuyInputs = () => {
+const validateBuyCarInputs = () => {
     return function (request, response, next) {
         try {
             if (!request.body.carId)
@@ -29,4 +29,4 @@ const validateCarBuyInputs = () => {
     };
 };
 
-module.exports = { validateCarBuyInputs };
+module.exports = { validateBuyCarInputs };

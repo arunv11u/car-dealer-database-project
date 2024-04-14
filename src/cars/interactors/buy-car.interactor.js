@@ -1,4 +1,5 @@
-const { CarRepository, TransactionRepository } = require("../repositories");
+const { CarRepository} = require("../repositories/car.repository");
+const { TransactionRepository } = require("../repositories/transaction.repository");
 
 async function buyCarInteractor(carId, buyerInfo) {
     const car = await CarRepository.findById(carId);
