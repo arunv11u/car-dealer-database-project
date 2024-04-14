@@ -35,9 +35,10 @@ router.post("/", [validateCreateCarInputs()], async (request, response, next) =>
 	}
 });
 
-router.post("/:carId/buy",[validateBuyCarInputs()], async (request, response, next) => {
+router.post("/buy",[validateBuyCarInputs()], async (request, response, next) => {
     try {
-        const carId = request.params.carId;
+        const carId = request.body.carId;
+		const dealerId = request.body.dealerId;
         const buyerInfo = {
             buyerName: request.body.buyerName,
             buyerPhone: request.body.buyerPhone,
@@ -47,7 +48,7 @@ router.post("/:carId/buy",[validateBuyCarInputs()], async (request, response, ne
             salePrice: request.body.salePrice
         };
 
-        const boughtCar = await buyCarInteractor(carId, buyerInfo);
+        const boughtCar = await buyCarInteractor(carId,dealerId, buyerInfo);
 
         response.status(200).send(boughtCar);
     } catch (error) {
