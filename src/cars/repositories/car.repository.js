@@ -30,8 +30,28 @@ function CarRepository() {
 		findAll: async function () {
 			const cars = await Car.find({ isDeleted: false });
 			return cars.map(formatCar);
-		}
-	};
+		},
+		
+		findById: async function (carId) {
+            const car = await Car.findById(carId);
+
+            if (!car) {
+                throw new Error("Car not found");
+            }
+
+            return car;
+        },
+
+        update: async function (carId, updateDTO) {
+            const updatedCar = await Car.findByIdAndUpdate(carId, updateDTO, { new: true });
+
+            if (!updatedCar) {
+                throw new Error("Car not found");
+            }
+
+            return formatCar(updatedCar);
+        }
+    };
 }
 
 function formatCar(car) {

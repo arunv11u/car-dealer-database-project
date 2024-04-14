@@ -8,6 +8,7 @@ const { softDeleteCarInteractor } = require("../interactors/delete-car.interacto
 const { validateUpdateCarInputs } = require("../validators/update-car.validator");
 const { getCarInteractor } = require("../interactors/get-car.interactor");
 const { getAllCarsInteractor } = require("../interactors/get-all-cars.interactor");
+const { buyCarInteractor } = require("../interactors/buy-car.interactor");
 
 const router = express.Router();
 
@@ -31,6 +32,27 @@ router.post("/", [validateCreateCarInputs()], async (request, response, next) =>
 
 		next(error);
 	}
+});
+
+router.post("/:carId/buy", async (request, response, next) => {
+    try {
+        const carId = request.params.carId;
+        const buyerInfo = {
+            buyerName: request.body.buyerName,
+            buyerPhone: request.body.buyerPhone,
+            buyerEmail: request.body.buyerEmail,
+            buyerAddress: request.body.buyerAddress,
+            paymentMethod: request.body.paymentMethod,
+            salePrice: request.body.salePrice
+        };
+
+        const boughtCar = await buyCarInteractor(carId, buyerInfo);
+
+        response.status(200).send(boughtCar);
+    } catch (error) {
+        console.error("Error in buying car:", error);
+        next(error);
+    }
 });
 
 router.put("/:id", [validateUpdateCarInputs()], async (request, response, next) => {
