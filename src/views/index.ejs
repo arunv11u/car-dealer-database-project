@@ -46,57 +46,45 @@
 	<main>
 		<div class="container pt-5">
 			<div class="lisitingContainer">
-				<div class="productCard" onclick="goToProduct('product id here')">
-					<img src="assets/img/Lykan_HyperSport (1).jpg" alt="" />
-					<div class="p-4">
-						<div class="flexBox mb-2">
-							<p class="title">2019 Frod Fsuion</p>
-							<p class="price">$90,540</p>
-						</div>
-						<div class="flexBox">
-							<div class="flexBox mileage me-2">
-								<i class="bi bi-fuel-pump"></i>
-								<p>90 KMPL</p>
+				<% for(let car of cars){ %>
+					<div class="productCard" onclick="goToProduct(<%= car._id%>)">
+						<img src="assets/img/Lykan_HyperSport (1).jpg" alt="" />
+						<div class="p-4">
+							<div class="flexBox mb-2">
+								<p class="title">
+									<%= car.year%>
+										<%= car.make%>
+											<%= car.model%>
+								</p>
+								<p class="price">
+									<%= car.price%>
+								</p>
 							</div>
-							<div class="flexBox color me-2">
-								<i class="bi bi-paint-bucket"></i>
-								<p>Black</p>
-							</div>
+							<div class="flexBox">
+								<div class="flexBox mileage me-2">
+									<i class="bi bi-fuel-pump"></i>
+									<p>
+										<%= car.mileage%> KM/L
+									</p>
+								</div>
+								<div class="flexBox color me-2">
+									<i class="bi bi-paint-bucket"></i>
+									<p>
+										<%= car.color%>
+									</p>
+								</div>
 
-							<button class="ms-auto button-29">Buy</button>
-						</div>
-						<div class="flexBox condition mt-2">
-							<i class="bi bi-car-front"></i>
-							<p>New</p>
+								<button class="ms-auto button-29">Buy</button>
+							</div>
+							<div class="flexBox condition mt-2">
+								<i class="bi bi-car-front"></i>
+								<p>
+									<%= car.condition%>
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="productCard" onclick="goToProduct('product id here')">
-					<img src="assets/img/Lykan_HyperSport (1).jpg" alt="" />
-					<div class="p-4">
-						<div class="flexBox mb-2">
-							<p class="title">2019 Frod Fsuion</p>
-							<p class="price">$90,540</p>
-						</div>
-						<div class="flexBox">
-							<div class="flexBox mileage me-2">
-								<i class="bi bi-fuel-pump"></i>
-								<p>90 KMPL</p>
-							</div>
-							<div class="flexBox color me-2">
-								<i class="bi bi-paint-bucket"></i>
-								<p>Black</p>
-							</div>
-
-							<button class="ms-auto button-29">Buy</button>
-						</div>
-						<div class="flexBox condition mt-2">
-							<i class="bi bi-car-front"></i>
-							<p>New</p>
-						</div>
-					</div>
-				</div>
+					<% } %>
 			</div>
 		</div>
 	</main>
