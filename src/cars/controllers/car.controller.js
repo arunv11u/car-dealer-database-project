@@ -8,19 +8,23 @@ const { softDeleteCarInteractor } = require("../interactors/delete-car.interacto
 const { validateUpdateCarInputs } = require("../validators/update-car.validator");
 const { getCarInteractor } = require("../interactors/get-car.interactor");
 const { getAllCarsInteractor } = require("../interactors/get-all-cars.interactor");
+const { buyCarInteractor } = require("../interactors/buy-car.interactor");
+const { validateBuyCarInputs } = require("../validators/buy-car.validator");
 
 const router = express.Router();
 
 router.post("/", [validateCreateCarInputs()], async (request, response, next) => {
 	try {
 		const requestDTO = {
+			image: request.body.image,
 			make: request.body.make,
 			model: request.body.model,
 			year: request.body.year,
 			price: request.body.price,
 			mileage: request.body.mileage,
 			color: request.body.color,
-			condition: request.body.condition
+			condition: request.body.condition,
+			dealer: request.body.dealer
 		};
 
 		const responseDTO = await createCarInteractor(requestDTO);
@@ -33,17 +37,51 @@ router.post("/", [validateCreateCarInputs()], async (request, response, next) =>
 	}
 });
 
+router.get("/", async (request, response, next) => {
+	try {
+		const cars = await getAllCarsInteractor();
+
+		response.status(200).send(cars);
+	} catch (error) {
+		console.error("Error in getting all cars:", error);
+		response.status(500).send({ error: "Internal Server Error" });
+	}
+});
+
+router.post("/buy",[validateBuyCarInputs()], async (request, response, next) => {
+    try {
+        const carId = request.body.carId;
+        const buyerInfo = {
+            buyerName: request.body.buyerName,
+            buyerPhone: request.body.buyerPhone,
+            buyerEmail: request.body.buyerEmail,
+            buyerAddress: request.body.buyerAddress,
+            paymentMethod: request.body.paymentMethod,
+            salePrice: request.body.salePrice
+        };
+
+        const boughtCar = await buyCarInteractor(carId, buyerInfo);
+
+        response.status(200).send(boughtCar);
+    } catch (error) {
+        console.error("Error in buying car:", error);
+        next(error);
+    }
+});
+
 router.put("/:id", [validateUpdateCarInputs()], async (request, response, next) => {
 	try {
 		const carId = request.params.id;
 		const updateDTO = {
+			image: request.body.image,
 			make: request.body.make,
 			model: request.body.model,
 			year: request.body.year,
 			price: request.body.price,
 			mileage: request.body.mileage,
 			color: request.body.color,
-			condition: request.body.condition
+			condition: request.body.condition,
+			dealer: request.body.dealer
 		};
 
 		const responseDTO = await updateCarInteractor(carId, updateDTO);
@@ -81,14 +119,4 @@ router.get("/:make/:model/:year", async (request, response, next) => {
 	}
 });
 
-router.get("/", async (request, response, next) => {
-	try {
-		const cars = await getAllCarsInteractor();
-
-		response.status(200).send(cars);
-	} catch (error) {
-		console.error("Error in getting all cars:", error);
-		response.status(500).send({ error: "Internal Server Error" });
-	}
-});
 module.exports = router;

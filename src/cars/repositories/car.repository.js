@@ -29,7 +29,26 @@ function CarRepository() {
 
 		findAll: async function () {
 			const cars = await Car.find({ isDeleted: false });
-			return cars.map(formatCar);
+
+			return cars.map(car => formatCar(car));
+		},
+
+		findById: async function (carId) {
+			const car = await Car.findById(carId);
+
+			if (!car)
+				throw new Error("Car not found");
+
+			return formatCar(car);
+		},
+
+		update: async function (carId, updateDTO) {
+			const updatedCar = await Car.findByIdAndUpdate(carId, updateDTO, { new: true });
+
+			if (!updatedCar)
+				throw new Error("Car not found");
+
+			return formatCar(updatedCar);
 		}
 	};
 }
@@ -37,13 +56,15 @@ function CarRepository() {
 function formatCar(car) {
 	return {
 		id: car._id,
+		image: car.image,
 		make: car.make,
 		model: car.model,
 		year: car.year,
 		price: car.price,
 		mileage: car.mileage,
 		color: car.color,
-		condition: car.condition
+		condition: car.condition,
+		dealer: car.dealer
 	};
 }
 
