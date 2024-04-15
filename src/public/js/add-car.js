@@ -34,6 +34,7 @@ $(async () => {
       .post("/car/", carData)
       .then((response) => {
         console.log("Response:", response.data);
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error("Error:", error);

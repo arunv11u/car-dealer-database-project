@@ -1,11 +1,11 @@
 const express = require("express");
-const Cars = require("../../cars/repositories/car.repository");
+const CarRepository = require("../../cars/repositories/car.repository");
 const router = express.Router();
 
 router.get("/", async (request, response, next) => {
   try {
-    const carRepository = Cars.CarRepository();
-    const cars = carRepository.findAll();
+    const carRepository = CarRepository.CarRepository();
+    const cars = await carRepository.findAll();
     return response.render("index", { cars });
   } catch (error) {
     throw error;
