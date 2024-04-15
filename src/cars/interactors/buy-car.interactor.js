@@ -8,17 +8,20 @@ async function buyCarInteractor(carId,dealerId, buyerInfo) {
         throw new Error("Car not found");
     }
 
-    if (car.isDeleted) {
+    if (car.isSold) {
         throw new Error("Car is already sold");
     }
 
+    if (car.isDeleted){
+        throw new Error("Car does not exist");
+    }
     const transaction = await TransactionRepository.create({
         car: carId,
         dealer: dealerId,
         ...buyerInfo
     });
 
-    car.isDeleted = true;
+    car.isSold = true;
     await CarRepository.update(carId, car);
 
     return {

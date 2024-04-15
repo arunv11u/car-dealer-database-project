@@ -8,7 +8,8 @@ const carSchema = new mongoose.Schema({
 	mileage: { type: Number, required: [true, "Mileage is required"] },
 	color: { type: String, required: [true, "Color is required"] },
 	condition: { type: String, enum: ["New", "Used"], required: [true, "Condition is required"] },
-	isDeleted: { type: Boolean, default: false }
+	isDeleted: { type: Boolean, default: false },
+	isSold:{type:Boolean, default:false}
 }, {
 	timestamps: { createdAt: "creationDate", updatedAt: "lastModifiedDate" }
 });
