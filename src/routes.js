@@ -18,7 +18,7 @@ function listen(app) {
 	app.use(cors(corsOptions));
 
 	// Parse JSON bodies
-	app.use(express.json());
+	app.use(express.json({limit: "100mb"}));
 	// Parse URL-encoded bodies
 	app.use(express.urlencoded({ extended: true }));
 

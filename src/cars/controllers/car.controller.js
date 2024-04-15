@@ -37,6 +37,17 @@ router.post("/", [validateCreateCarInputs()], async (request, response, next) =>
 	}
 });
 
+router.get("/", async (request, response, next) => {
+	try {
+		const cars = await getAllCarsInteractor();
+
+		response.status(200).send(cars);
+	} catch (error) {
+		console.error("Error in getting all cars:", error);
+		response.status(500).send({ error: "Internal Server Error" });
+	}
+});
+
 router.post("/buy",[validateBuyCarInputs()], async (request, response, next) => {
     try {
         const carId = request.body.carId;
@@ -105,17 +116,6 @@ router.get("/:make/:model/:year", async (request, response, next) => {
 	} catch (error) {
 		console.error("Error in getting car by make, model, and year:", error);
 		next(error);
-	}
-});
-
-router.get("/", async (request, response, next) => {
-	try {
-		const cars = await getAllCarsInteractor();
-
-		response.status(200).send(cars);
-	} catch (error) {
-		console.error("Error in getting all cars:", error);
-		response.status(500).send({ error: "Internal Server Error" });
 	}
 });
 

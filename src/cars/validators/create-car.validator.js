@@ -31,6 +31,7 @@ const validateCreateCarInputs = () => {
 
 			next();
 		} catch (error) {
+			console.log("Error in validateCreateCarInputs :", error);
 			throw { error: error.message, errorCode: 400 };
 		}
 	}
