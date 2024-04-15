@@ -1,8 +1,9 @@
-const { CarRepository} = require("../repositories/car.repository");
+const { CarRepository } = require("../repositories/car.repository");
 const { TransactionRepository } = require("../repositories/transaction.repository");
 
 async function buyCarInteractor(carId,dealerId, buyerInfo) {
-    const car = await CarRepository.findById(carId);
+	const carRepository = CarRepository();
+    const car = await carRepository.findById(carId);
 
     if (!car) {
         throw new Error("Car not found");
@@ -15,14 +16,16 @@ async function buyCarInteractor(carId,dealerId, buyerInfo) {
     if (car.isDeleted){
         throw new Error("Car does not exist");
     }
-    const transaction = await TransactionRepository.create({
+
+	const transactionRepository = TransactionRepository();
+    const transaction = await transactionRepository.create({
         car: carId,
         dealer: dealerId,
         ...buyerInfo
     });
 
     car.isSold = true;
-    await CarRepository.update(carId, car);
+    await carRepository.update(carId, car);
 
     return {
         transactionId: transaction.id,
