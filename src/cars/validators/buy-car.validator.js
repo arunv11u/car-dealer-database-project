@@ -4,9 +4,6 @@ const validateBuyCarInputs = () => {
             if (!request.body.carId)
                 throw new Error("Car ID is required");
 
-            if (!request.body.dealerId)
-                throw new Error("Dealer ID is required");
-
             if (!request.body.buyerName)
                 throw new Error("Buyer name is required");
 

@@ -45,9 +45,11 @@ function listen(app) {
 	// Importing controllers for different routes
 	const carController = require("./cars/controllers/car.controller");
 	const pageController = require("./views/controllers/page.controller");
+	const dealerController = require("./dealers/controllers/dealer.controller");
 
 	// Mounting routes
 	app.use("/car", carController);
+	app.use("/dealer", dealerController);
 	app.use("/", pageController);
 
 	// Error handling middleware

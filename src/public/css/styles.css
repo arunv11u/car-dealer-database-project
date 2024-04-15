@@ -1,280 +1,317 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Exo 2", sans-serif;
-  text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Exo 2", sans-serif;
+	text-decoration: none;
 }
+
 p {
-  margin-bottom: 0 !important;
+	margin-bottom: 0 !important;
 }
+
 :root {
-  --primary: #008dda;
-  --secondary: #e1dcd5;
-  --black: #000;
-  --white: #ffffff;
+	--primary: #008dda;
+	--secondary: #e1dcd5;
+	--black: #000;
+	--white: #ffffff;
 }
+
 body {
-  background-color: var(--white);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	background-color: var(--white);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
+
 h1 {
-  margin: auto;
-  width: 60%;
+	margin: auto;
+	width: 60%;
 }
+
 .flexBox {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
+
 .navbar-brand {
-  width: fit-content;
+	width: fit-content;
 }
+
 .navbar-brand img {
-  width: 150px;
-  height: 100px;
+	width: 150px;
+	height: 100px;
 }
+
 .navbar-nav {
-  flex-direction: row !important;
+	flex-direction: row !important;
 }
+
 .navbar-nav .nav-link {
-  margin-right: 1rem;
+	margin-right: 1rem;
 }
+
 .lisitingContainer {
-  margin: auto;
-  width: 80%;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 2rem;
+	margin: auto;
+	width: 80%;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 2rem;
 }
+
 .productCard {
-  border: 1px solid rgb(220, 220, 220);
-  border-radius: 40px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-  margin-bottom: 1rem;
-  overflow: hidden;
+	border: 1px solid rgb(220, 220, 220);
+	border-radius: 40px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+		rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+	margin-bottom: 1rem;
+	overflow: hidden;
 }
+
+.productCard:hover {
+	cursor: pointer;
+}
+
 .productCard .title {
-  color: var(--primary);
-  font-size: 20px;
-  font-weight: 700;
+	color: var(--primary);
+	font-size: 20px;
+	font-weight: 700;
 }
+
 .productCard img {
-  width: 100%;
+	width: 100%;
 }
 
 .productCard .desc {
-  margin-top: 1rem;
-  font-size: 14px;
-  width: 90%;
+	margin-top: 1rem;
+	font-size: 14px;
+	width: 90%;
 }
+
 .productCard .rating p:last-of-type {
-  background: var(--primary);
-  color: #000;
-  padding: 5px;
-  border-radius: 5px;
-  margin-left: 5px;
+	background: var(--primary);
+	color: #000;
+	padding: 5px;
+	border-radius: 5px;
+	margin-left: 5px;
 }
+
 .priceContainer {
-  margin-top: 1.5rem;
-  font-size: 14px;
+	margin-top: 1.5rem;
+	font-size: 14px;
 }
+
 .productCard .price {
-  margin-left: auto;
-  color: green;
-  font-size: 18px;
-  font-weight: 700;
+	margin-left: auto;
+	color: green;
+	font-size: 18px;
+	font-weight: 700;
 }
+
 .productCard .mileage i {
-  margin-right: 10px;
+	margin-right: 10px;
 }
+
 .productCard .mileage {
-  border: 1px solid rgb(193, 193, 193);
-  width: fit-content;
-  padding: 3px 1rem;
-  border-radius: 40px;
-  font-size: 14px;
+	border: 1px solid rgb(193, 193, 193);
+	width: fit-content;
+	padding: 3px 1rem;
+	border-radius: 40px;
+	font-size: 14px;
 }
 
 .productCard .color i {
-  margin-right: 10px;
+	margin-right: 10px;
 }
+
 .productCard .color {
-  border: 1px solid rgb(193, 193, 193);
-  width: fit-content;
-  padding: 3px 1rem;
-  border-radius: 40px;
-  font-size: 14px;
+	border: 1px solid rgb(193, 193, 193);
+	width: fit-content;
+	padding: 3px 1rem;
+	border-radius: 40px;
+	font-size: 14px;
 }
 
 .productCard .condition i {
-  margin-right: 10px;
+	margin-right: 10px;
 }
+
 .productCard .condition {
-  border: 1px solid rgb(193, 193, 193);
-  width: fit-content;
-  padding: 3px 1rem;
-  border-radius: 40px;
-  font-size: 14px;
+	border: 1px solid rgb(193, 193, 193);
+	width: fit-content;
+	padding: 3px 1rem;
+	border-radius: 40px;
+	font-size: 14px;
 }
+
 form {
-  width: 60%;
-  margin: auto;
+	width: 60%;
+	margin: auto;
 }
 
 form label {
-  font-size: 20px;
+	font-size: 20px;
 }
-form input {
-}
+
+form input {}
 
 /* CSS */
 .button-29 {
-  align-items: center;
-  appearance: none;
-  background-image: radial-gradient(
-    100% 100% at 100% 0,
-    #5adaff 0,
-    #5468ff 100%
-  );
-  border: 0;
-  border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono", monospace;
-  height: 38px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 26px;
-  padding-right: 26px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow 0.15s, transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 18px;
+	align-items: center;
+	appearance: none;
+	background-image: radial-gradient(100% 100% at 100% 0,
+			#5adaff 0,
+			#5468ff 100%);
+	border: 0;
+	border-radius: 6px;
+	box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: "JetBrains Mono", monospace;
+	height: 38px;
+	justify-content: center;
+	line-height: 1;
+	list-style: none;
+	overflow: hidden;
+	padding-left: 26px;
+	padding-right: 26px;
+	position: relative;
+	text-align: left;
+	text-decoration: none;
+	transition: box-shadow 0.15s, transform 0.15s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	will-change: box-shadow, transform;
+	font-size: 18px;
 }
 
 .button-29:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+	box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
 
 .button-29:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
+	box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+	transform: translateY(-2px);
 }
 
 .button-29:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
+	box-shadow: #3c4fe0 0 3px 7px inset;
+	transform: translateY(2px);
 }
+
 /* CSS */
 .button-66 {
-  background-color: var(--primary);
-  border-radius: 4px;
-  border: 0;
-  box-shadow: var(--primary) 0 -1px 3px 0 inset,
-    rgba(0, 44, 97, 0.1) 0 3px 6px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inherit;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  margin: 0;
-  min-height: 56px;
-  min-width: 120px;
-  padding: 16px 20px;
-  position: relative;
-  text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+	background-color: var(--primary);
+	border-radius: 4px;
+	border: 0;
+	box-shadow: var(--primary) 0 -1px 3px 0 inset,
+		rgba(0, 44, 97, 0.1) 0 3px 6px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inherit;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 24px;
+	margin: 0;
+	min-height: 56px;
+	min-width: 120px;
+	padding: 16px 20px;
+	position: relative;
+	text-align: center;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: baseline;
+	transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .button-66:hover {
-  background-color: var(--primary);
-  transform: translateY(-2px);
+	background-color: var(--primary);
+	transform: translateY(-2px);
 }
+
 #uploadContainer {
-  border: 2px dashed black;
-  padding: 3rem 5rem;
-  cursor: pointer;
-  width: fit-content;
+	border: 2px dashed black;
+	padding: 3rem 5rem;
+	cursor: pointer;
+	width: fit-content;
 }
+
 #imageContainer {
-  position: relative;
-  border: 2px dashed black;
-  padding: 1rem;
-  cursor: pointer;
-  width: fit-content;
+	position: relative;
+	border: 2px dashed black;
+	padding: 1rem;
+	cursor: pointer;
+	width: fit-content;
 }
+
 #imageContainer img {
-  width: 300px;
-  height: 200px;
-  object-fit: contain;
+	width: 300px;
+	height: 200px;
+	object-fit: contain;
 }
+
 #uploadContainer i {
-  font-size: 60px;
+	font-size: 60px;
 }
+
 #imageContainer {
-  display: none;
+	display: none;
 }
+
 #imageContainer i {
-  cursor: pointer;
-  font-size: 28px;
-  position: absolute;
-  top: -22px;
-  right: -14px;
+	cursor: pointer;
+	font-size: 28px;
+	position: absolute;
+	top: -22px;
+	right: -14px;
 }
+
 footer {
-  margin-top: auto !important;
-  padding: 5rem 0;
+	margin-top: auto !important;
+	padding: 5rem 0;
 }
+
 footer img {
-  width: 5%;
+	width: 5%;
 }
+
 @media (max-width: 768px) {
-  .lisitingContainer {
-    grid-template-columns: auto;
-    width: 100%;
-  }
-  form {
-    width: 90%;
-  }
-  #imageContainer img {
-    width: 240px;
-  }
-  #uploadContainer {
-    padding: 3rem 7rem;
-  }
-  footer img {
-    width: 25%;
-  }
+	.lisitingContainer {
+		grid-template-columns: auto;
+		width: 100%;
+	}
+
+	form {
+		width: 90%;
+	}
+
+	#imageContainer img {
+		width: 240px;
+	}
+
+	#uploadContainer {
+		padding: 3rem 7rem;
+	}
+
+	footer img {
+		width: 25%;
+	}
 }
 
 @media (min-width: 769px) {
-  .button-66 {
-    padding: 16px 44px;
-    min-width: 150px;
-  }
+	.button-66 {
+		padding: 16px 44px;
+		min-width: 150px;
+	}
 }

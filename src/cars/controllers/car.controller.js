@@ -16,13 +16,15 @@ const router = express.Router();
 router.post("/", [validateCreateCarInputs()], async (request, response, next) => {
 	try {
 		const requestDTO = {
+			image: request.body.image,
 			make: request.body.make,
 			model: request.body.model,
 			year: request.body.year,
 			price: request.body.price,
 			mileage: request.body.mileage,
 			color: request.body.color,
-			condition: request.body.condition
+			condition: request.body.condition,
+			dealer: request.body.dealer
 		};
 
 		const responseDTO = await createCarInteractor(requestDTO);
@@ -38,7 +40,6 @@ router.post("/", [validateCreateCarInputs()], async (request, response, next) =>
 router.post("/buy",[validateBuyCarInputs()], async (request, response, next) => {
     try {
         const carId = request.body.carId;
-		const dealerId = request.body.dealerId;
         const buyerInfo = {
             buyerName: request.body.buyerName,
             buyerPhone: request.body.buyerPhone,
@@ -48,7 +49,7 @@ router.post("/buy",[validateBuyCarInputs()], async (request, response, next) => 
             salePrice: request.body.salePrice
         };
 
-        const boughtCar = await buyCarInteractor(carId,dealerId, buyerInfo);
+        const boughtCar = await buyCarInteractor(carId, buyerInfo);
 
         response.status(200).send(boughtCar);
     } catch (error) {
@@ -61,13 +62,15 @@ router.put("/:id", [validateUpdateCarInputs()], async (request, response, next) 
 	try {
 		const carId = request.params.id;
 		const updateDTO = {
+			image: request.body.image,
 			make: request.body.make,
 			model: request.body.model,
 			year: request.body.year,
 			price: request.body.price,
 			mileage: request.body.mileage,
 			color: request.body.color,
-			condition: request.body.condition
+			condition: request.body.condition,
+			dealer: request.body.dealer
 		};
 
 		const responseDTO = await updateCarInteractor(carId, updateDTO);
@@ -115,4 +118,5 @@ router.get("/", async (request, response, next) => {
 		response.status(500).send({ error: "Internal Server Error" });
 	}
 });
+
 module.exports = router;

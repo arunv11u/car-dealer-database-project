@@ -17,4 +17,13 @@ router.get("/add-car", async (request, response, next) => {
 		throw error;
 	}
 });
+
+router.get("/edit-car", async (request, response, next) => {
+	try {
+		return response.render("edit-car");
+	} catch (error) {
+		throw error;
+	}
+});
+
 module.exports = router;

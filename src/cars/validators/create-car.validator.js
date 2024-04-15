@@ -2,11 +2,14 @@
 const validateCreateCarInputs = () => {
 	return function (request, response, next) {
 		try {
+			if (!request.body.image)
+				throw new Error("Image is required");
+
 			if (!request.body.make)
-				throw new Error("Make is a required");
+				throw new Error("Make is required");
 
 			if (!request.body.model)
-				throw new Error("Model is a required");
+				throw new Error("Model is required");
 
 			if (!request.body.year)
 				throw new Error("Year is required");
@@ -22,6 +25,9 @@ const validateCreateCarInputs = () => {
 
 			if (!request.body.condition)
 				throw new Error("Condition is required");
+
+			if (!request.body.dealer)
+				throw new Error("Dealer is required");
 
 			next();
 		} catch (error) {
