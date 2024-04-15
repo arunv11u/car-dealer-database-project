@@ -1,4 +1,4 @@
-const { Transaction } = require("./transaction.model");
+const Transaction = require("./transaction.model");
 
 function TransactionRepository() {
     return {
