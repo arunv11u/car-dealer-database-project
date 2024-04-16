@@ -16,9 +16,6 @@ const validateBuyCarInputs = () => {
             if (!request.body.paymentMethod)
                 throw new Error("Payment method is required");
 
-            if (!request.body.salePrice)
-                throw new Error("Sale price is required");
-
             next();
         } catch (error) {
             response.status(400).send({ error: error.message });

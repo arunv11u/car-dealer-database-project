@@ -2,12 +2,16 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Car Inventory</title>
 	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 		html {
 			-webkit-print-color-adjust: exact;
+			font-family: "Rubik", sans-serif;
+			padding-top: 5rem;
 		}
 
 		table {
@@ -23,12 +27,47 @@
 		}
 
 		th {
-			background-color: #f2f2f2;
+			background-color: #e0f2ff;
+		}
+
+		.flexBox {
+			display: flex;
+			align-items: center;
+		}
+
+		.logo {
+			width: 170px;
+			height: 100px;
+		}
+
+		.ms-auto {
+			margin-left: auto;
+		}
+
+		.text-end {
+			text-align: right;
+		}
+
+		table {
+			border: 1px solid #dddddd;
+			border-radius: 5px;
+		}
+
+		td {
+			border: none;
+			padding: 10px;
 		}
 	</style>
 </head>
 
 <body>
+	<div class="flexBox">
+		<img class="logo" src="http://localhost:3000/assets/img/Binary_Brains_Logo.png" alt="" />
+		<div class="ms-auto text-end">
+			<p>{{today}}</p>
+			<p>Ontario, Canada</p>
+		</div>
+	</div>
 	<h1>Car Inventory</h1>
 	<table>
 		<thead>
@@ -43,15 +82,17 @@
 			</tr>
 		</thead>
 		<tbody>
+			{{#each cars}}
 			<tr>
-				<td>Toyota</td>
-				<td>Camry</td>
-				<td>2022</td>
-				<td>$25,000</td>
-				<td>20,000 miles</td>
-				<td>Red</td>
-				<td>Used</td>
+				<td>{{make}}</td>
+				<td>{{model}}</td>
+				<td>{{year}}</td>
+				<td>{{price}}</td>
+				<td>{{mileage}}</td>
+				<td>{{color}}</td>
+				<td>{{condition}}</td>
 			</tr>
+			{{/each}}
 		</tbody>
 	</table>
 </body>

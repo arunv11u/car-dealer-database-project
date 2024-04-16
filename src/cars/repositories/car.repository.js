@@ -21,12 +21,6 @@ function CarRepository() {
 			return formatCar(deletedCar);
 		},
 
-		findByMakeModelYear: async function (make, model, year) {
-			const car = await Car.findOne({ make, model, year, isDeleted: false });
-
-			return formatCar(car);
-		},
-
 		findAll: async function () {
 			const cars = await Car.find({ isDeleted: false });
 
@@ -49,7 +43,13 @@ function CarRepository() {
 				throw new Error("Car not found");
 
 			return formatCar(updatedCar);
-		}
+		},
+
+		getAllCarsInInventory: async function () {
+			const cars = await Car.find({ isDeleted: false, isSold: false });
+
+			return cars.map(car => formatCar(car));
+		},
 	};
 }
 
@@ -64,7 +64,8 @@ function formatCar(car) {
 		mileage: car.mileage,
 		color: car.color,
 		condition: car.condition,
-		dealer: car.dealer
+		dealer: car.dealer,
+		isSold: car.isSold
 	};
 }
 

@@ -5,11 +5,17 @@ const {
 const { validateCreateCarInputs } = require("../validators/create-car.validator");
 const { updateCarInteractor } = require("../interactors/update-car.interactor");
 const { softDeleteCarInteractor } = require("../interactors/delete-car.interactor");
-const { validateUpdateCarInputs } = require("../validators/update-car.validator");
 const { getCarInteractor } = require("../interactors/get-car.interactor");
 const { getAllCarsInteractor } = require("../interactors/get-all-cars.interactor");
 const { buyCarInteractor } = require("../interactors/buy-car.interactor");
-const { validateBuyCarInputs } = require("../validators/buy-car.validator");
+const {
+	validateDeleteCarInputs,
+	validateGetCarInputs,
+	validateUpdateCarInputs,
+	validateBuyCarInputs
+} = require("../validators");
+const { downloadInventoryPdfInteractor } = require("../interactors/download-inventory-pdf.interactor");
+const { downloadSalesReportPdfInteractor } = require("../interactors/download-sales-report-pdf.interactor");
 
 const router = express.Router();
 
@@ -48,25 +54,48 @@ router.get("/", async (request, response, next) => {
 	}
 });
 
-router.post("/buy",[validateBuyCarInputs()], async (request, response, next) => {
-    try {
-        const carId = request.body.carId;
-        const buyerInfo = {
-            buyerName: request.body.buyerName,
-            buyerPhone: request.body.buyerPhone,
-            buyerEmail: request.body.buyerEmail,
-            buyerAddress: request.body.buyerAddress,
-            paymentMethod: request.body.paymentMethod,
-            salePrice: request.body.salePrice
-        };
+router.post("/buy", [validateBuyCarInputs()], async (request, response, next) => {
+	try {
+		const carId = request.body.carId;
+		const buyerInfo = {
+			buyerName: request.body.buyerName,
+			buyerPhone: request.body.buyerPhone,
+			buyerEmail: request.body.buyerEmail,
+			buyerAddress: request.body.buyerAddress,
+			paymentMethod: request.body.paymentMethod
+		};
 
-        const boughtCar = await buyCarInteractor(carId, buyerInfo);
+		const boughtCar = await buyCarInteractor(carId, buyerInfo);
 
-        response.status(200).send(boughtCar);
-    } catch (error) {
-        console.error("Error in buying car:", error);
-        next(error);
-    }
+		response.status(200).send(boughtCar);
+	} catch (error) {
+		console.error("Error in buying car:", error);
+		next(error);
+	}
+});
+
+router.get("/download-inventory-pdf", async (request, response, next) => {
+	try {
+		const pdfBuffer = await downloadInventoryPdfInteractor();
+
+		response.setHeader("content-type", "application/pdf");
+		response.end(pdfBuffer);
+	} catch (error) {
+		console.error("Error in downloading inventory pdf:", error);
+		next(error);
+	}
+});
+
+router.get("/sales-report-pdf", async (request, response, next) => {
+	try {
+		const pdfBuffer = await downloadSalesReportPdfInteractor();
+
+		response.setHeader("content-type", "application/pdf");
+		response.end(pdfBuffer);
+	} catch (error) {
+		console.error("Error in downloading inventory pdf:", error);
+		next(error);
+	}
 });
 
 router.put("/:id", [validateUpdateCarInputs()], async (request, response, next) => {
@@ -93,7 +122,7 @@ router.put("/:id", [validateUpdateCarInputs()], async (request, response, next) 
 	}
 });
 
-router.delete("/:id", async (request, response, next) => {
+router.delete("/:id", [validateDeleteCarInputs()], async (request, response, next) => {
 	try {
 		const carId = request.params.id;
 
@@ -106,15 +135,15 @@ router.delete("/:id", async (request, response, next) => {
 	}
 });
 
-router.get("/:make/:model/:year", async (request, response, next) => {
+router.get("/:id", [validateGetCarInputs()], async (request, response, next) => {
 	try {
-		const { make, model, year } = request.params;
+		const carId = request.params.id;
 
-		const car = await getCarInteractor(make, model, parseInt(year));
+		const car = await getCarInteractor(carId);
 
 		response.status(200).send(car);
 	} catch (error) {
-		console.error("Error in getting car by make, model, and year:", error);
+		console.error("Error in getting car details:", error);
 		next(error);
 	}
 });

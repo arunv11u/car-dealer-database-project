@@ -20,6 +20,7 @@ async function buyCarInteractor(carId, buyerInfo) {
 	const transactionRepository = TransactionRepository();
 	const transaction = await transactionRepository.create({
 		car: carId,
+		salePrice: car.price,
 		dealer: car.dealer,
 		...buyerInfo
 	});
