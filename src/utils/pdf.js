@@ -1,3 +1,6 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
 const { promisify } = require("util");
 const fs = require("fs");
 const { launch } = require("puppeteer");

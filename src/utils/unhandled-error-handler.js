@@ -1,3 +1,6 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
 /**
  * Function to handle uncaught exceptions and unhandled rejections.
  * It logs the error to the console.

@@ -1,4 +1,5 @@
-
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
 
 const months = [
 	"January",

@@ -1,3 +1,6 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
 /**
  * Function to provide CORS (Cross-Origin Resource Sharing) options.
  * @param {object} request The incoming HTTP request object.
