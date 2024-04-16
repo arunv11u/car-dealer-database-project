@@ -1,5 +1,8 @@
 "use strict";
 
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
+
 import { faker } from 'https://esm.sh/@faker-js/faker';
 
 $(() => {

@@ -1,5 +1,9 @@
 "use strict";
 
+
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
+
 let carImage = null;
 
 $(async () => {
