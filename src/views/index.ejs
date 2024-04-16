@@ -19,17 +19,7 @@
 				<a class="navbar-brand me-auto" href="/">
 					<img src="assets/img/Binary_Brains_Logo.png" alt="" />
 				</a>
-				<!-- <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button> -->
+
 				<div class="" id="navbarNav">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item">
@@ -38,17 +28,34 @@
 						<li class="nav-item">
 							<a class="nav-link" href="/add-car">Add Car</a>
 						</li>
+
+						<!-- <li class="nav-item">
+							<button class="ms-auto button-29" type="button">Download Inventory</button>
+						</li> -->
+
+						<!-- &nbsp; &nbsp; -->
+						<!-- <li class="nav-item">
+							<button class="ms-auto button-29" type="button">Download Inventory</button>
+						</li> -->
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</header>
 	<main>
+		<div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-body" id="toast-content"></div>
+		</div>
+		
 		<div class="container pt-5">
+			<div class="download-pdf">
+				<button id="car-inventory-pdf" class="button-29" type="button">Inventory Report</button>
+				<button id="sales-report-pdf" class="button-29" type="button">Sales Report</button>
+			</div>
 			<div class="lisitingContainer">
 				<%for(let car of cars){%>
-					<div class="productCard" onclick="goToProduct('<%= car._id%>')">
-						<img src="<%=car.image%>" alt="" />
+					<div class="productCard">
+						<img src="<%=car.image%>" alt="" onclick="goToProduct('<%= car.id%>')" />
 						<div class="p-4">
 							<div class="flexBox mb-2">
 								<p class="title">
@@ -57,7 +64,7 @@
 											<%=car.model%>
 								</p>
 								<p class="price">
-									<%=car.price%>
+									CAD <%=car.price%>
 								</p>
 							</div>
 							<div class="flexBox">
@@ -74,7 +81,14 @@
 									</p>
 								</div>
 
-								<button class="ms-auto button-29">Buy</button>
+								<% if (car.isSold) { %>
+									<button class="ms-auto button-29" type="button"
+									onclick="buyCar('<%= car.id%>')" disabled>Sold Out</button>
+								<% } else { %>
+									<button class="ms-auto button-29" type="button"
+									onclick="buyCar('<%= car.id%>')">Buy</button>
+								<% } %>
+								
 							</div>
 							<div class="flexBox condition mt-2">
 								<i class="bi bi-car-front"></i>
@@ -110,7 +124,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-	<script src="/js/index.js"></script>
+	<script type="module" src="/js/index.js"></script>
 </body>
 
 </html>

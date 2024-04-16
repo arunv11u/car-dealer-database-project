@@ -1,3 +1,7 @@
+
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
+
 const validateBuyCarInputs = () => {
     return function (request, response, next) {
         try {
@@ -15,9 +19,6 @@ const validateBuyCarInputs = () => {
 
             if (!request.body.paymentMethod)
                 throw new Error("Payment method is required");
-
-            if (!request.body.salePrice)
-                throw new Error("Sale price is required");
 
             next();
         } catch (error) {

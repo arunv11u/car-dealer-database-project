@@ -1,3 +1,9 @@
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
+
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
 const { CarRepository } = require("../repositories/car.repository");
 const { TransactionRepository } = require("../../transactions/repositories/transaction.repository");
 
@@ -20,6 +26,7 @@ async function buyCarInteractor(carId, buyerInfo) {
 	const transactionRepository = TransactionRepository();
 	const transaction = await transactionRepository.create({
 		car: carId,
+		salePrice: car.price,
 		dealer: car.dealer,
 		...buyerInfo
 	});

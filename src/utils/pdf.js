@@ -52,7 +52,7 @@ class PdfService {
 		let data = { ...pdfDetails };
 		try {
 			const res = await this.getTemplateHtml(path);
-			// Now we have the html code of our template in res objec
+			// Now we have the html code of our template in res object
 			console.log('Compiling the template with handlebars');
 			const template = compile(res, { strict: true });
 
@@ -71,19 +71,14 @@ class PdfService {
 
 			const page = await browser.newPage();
 
-			// page.setUserAgent(
-			//   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36WAIT_UNTIL=load'
-			// );
 			// We set the page content as the generated html by handlebars
 			await page.setContent(html, { waitUntil: 'load' });
 			await page.content();
 			// We use pdf function to generate the pdf in the same folder as this file.
-			// { path: 'invoice.pdf', format: 'A4' }
 
 			let pdfBuffer = await page.pdf(options);
 			await browser.close();
 
-			console.log("pdfBuffer ::", pdfBuffer);
 			return pdfBuffer;
 		} catch (error) {
 			console.error(`Error in generatePdf :`, error);

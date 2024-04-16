@@ -2,12 +2,16 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Sales Report</title>
 	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 		html {
 			-webkit-print-color-adjust: exact;
+			font-family: "Rubik", sans-serif;
+			padding-top: 5rem;
 		}
 
 		table {
@@ -23,29 +27,66 @@
 		}
 
 		th {
-			background-color: #f2f2f2;
+			background-color: #e0f2ff;
+		}
+
+		.flexBox {
+			display: flex;
+			align-items: center;
+		}
+
+		.logo {
+			width: 170px;
+			height: 100px;
+		}
+
+		.ms-auto {
+			margin-left: auto;
+		}
+
+		.text-end {
+			text-align: right;
+		}
+
+		table {
+			border: 1px solid #dddddd;
+			border-radius: 5px;
+		}
+
+		td {
+			border: none;
+			padding: 10px;
 		}
 	</style>
 </head>
 
 <body>
+	<div class="flexBox">
+		<img class="logo" src="http://localhost:3000/assets/img/Binary_Brains_Logo.png" alt="" />
+		<div class="ms-auto text-end">
+			<p>{{today}}</p>
+			<p>Ontario, Canada</p>
+		</div>
+	</div>
 	<h1>Sales Report</h1>
 	<table>
 		<thead>
 			<tr>
 				<th>Buyer Name</th>
-				<th>Car Sold</th>
+				<th>Dealer</th>
 				<th>Sale Price</th>
 				<th>Transaction Date</th>
 			</tr>
 		</thead>
 		<tbody>
+			{{#each transactions}}
 			<tr>
-				<td>John Doe</td>
-				<td>Toyota Camry</td>
-				<td>$25,000</td>
-				<td>2024-04-08</td>
+				<td>{{buyerName}}</td>
+				<td>{{dealer.name}}</td>
+				<td>${{salePrice}}</td>
+				<td>{{transactionDate}}</td>
 			</tr>
+			{{/each}}
 		</tbody>
 	</table>
 </body>

@@ -1,3 +1,8 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
 
 const validateCreateCarInputs = () => {
 	return function (request, response, next) {
@@ -31,7 +36,6 @@ const validateCreateCarInputs = () => {
 
 			next();
 		} catch (error) {
-			console.log("Error in validateCreateCarInputs :", error);
 			throw { error: error.message, errorCode: 400 };
 		}
 	}

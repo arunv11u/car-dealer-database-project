@@ -1,3 +1,12 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
+
+/* Student Name: Fenil Moradiya
+Student Number: 8941920 */
+
 const Car = require("./car.model");
 
 
@@ -19,12 +28,6 @@ function CarRepository() {
 			const deletedCar = await Car.findByIdAndUpdate(carId, { isDeleted: true }, { new: true });
 
 			return formatCar(deletedCar);
-		},
-
-		findByMakeModelYear: async function (make, model, year) {
-			const car = await Car.findOne({ make, model, year, isDeleted: false });
-
-			return formatCar(car);
 		},
 
 		findAll: async function () {
@@ -49,7 +52,13 @@ function CarRepository() {
 				throw new Error("Car not found");
 
 			return formatCar(updatedCar);
-		}
+		},
+
+		getAllCarsInInventory: async function () {
+			const cars = await Car.find({ isDeleted: false, isSold: false });
+
+			return cars.map(car => formatCar(car));
+		},
 	};
 }
 
@@ -64,7 +73,8 @@ function formatCar(car) {
 		mileage: car.mileage,
 		color: car.color,
 		condition: car.condition,
-		dealer: car.dealer
+		dealer: car.dealer,
+		isSold: car.isSold
 	};
 }
 
