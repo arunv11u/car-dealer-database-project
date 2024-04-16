@@ -1,3 +1,6 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
 const { dbConnect } = require("./src/utils");
 const { Car, Dealer, Transaction } = require("./schema");
 

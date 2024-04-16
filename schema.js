@@ -1,3 +1,6 @@
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
+
 const mongoose = require('mongoose');
 
 // Define car schema

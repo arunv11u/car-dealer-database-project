@@ -1,3 +1,6 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
 /**
  * Middleware function to handle errors in HTTP requests.
  * @param {object} error The error object containing error details.

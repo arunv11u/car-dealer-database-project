@@ -1,3 +1,12 @@
+/* Student Name: Arun Varadharajalu
+Student Number: 8896434 */
+
+/* Student Name: James Boby Vempala
+Student Number: 8941304 */
+
+/* Student Name: Fenil Moradiya
+Student Number: 8941920 */
+
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -381,6 +390,10 @@ footer img {
 	justify-content: flex-end;
 	gap: 20px;
 	margin-bottom: 30px;
+}
+
+.pointer {
+	cursor: pointer;
 }
 
 @media (max-width: 768px) {
